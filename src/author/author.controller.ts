@@ -10,7 +10,7 @@ import { ApiTags } from '@nestjs/swagger'
   },
   query: {
     join: {
-      articles: {
+      books: {
         eager: true,
       },
     },

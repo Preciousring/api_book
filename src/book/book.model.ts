@@ -9,14 +9,11 @@ import { Author } from '../author/author.model'
 @Entity()
 export class Book {
   @PrimaryGeneratedColumn()
-  bookId: number;
+  id: number;
 
   @Column()
   @IsString()
   title: string;
-
-  @Column()
-  authorId: string;
 
   @Column()
   price: number;
@@ -24,13 +21,13 @@ export class Book {
   @Column()
   iban: string;
 
+
   @Column()
-  @IsDate()
-  publishedAt: Date;
+  publishedAt: string;
 
   @ApiProperty({ type: () => Author })
   @ManyToOne(
-    () => Author,
+    type => Author,
     author => author.books,
     {
       onDelete: 'CASCADE',

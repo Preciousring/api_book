@@ -7,7 +7,7 @@ import { ApiProperty } from '@nestjs/swagger'
 @Entity()
 export class Author {
   @PrimaryGeneratedColumn()
-  authorId: number;
+  id: number;
 
   @Column()
   @IsString()
@@ -24,8 +24,8 @@ export class Author {
 
   @ApiProperty({ type: () => Book })
   @OneToMany(
-    () => Book,
-    book => book.author,
+    type => Book,
+    book => book.author
   )
   books: Book[]
 

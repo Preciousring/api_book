@@ -7,7 +7,7 @@ async function bootstrap() {
 
   const options = new DocumentBuilder()
     .setTitle('API Books')
-    .setDescription('API articles et auteurs')
+    .setDescription('API livres et auteurs')
     .setVersion('1.0')
     .addTag('api-books')
     .build()
